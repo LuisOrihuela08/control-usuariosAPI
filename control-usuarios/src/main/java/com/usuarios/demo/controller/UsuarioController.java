@@ -31,7 +31,7 @@ public class UsuarioController {
 		usuarioService.save(usuario);
 		
 		//Y aca enviamos el correo electronico del nuevo registro de usuario
-		String email = "fablabproyecto@gmail.com";
+		String email = "erickmendozaojeda33@gmail.com";
 		String subject = "Se registro un nuevo usuario";
 		
 		//Ahora implementamos la estructura HTML
