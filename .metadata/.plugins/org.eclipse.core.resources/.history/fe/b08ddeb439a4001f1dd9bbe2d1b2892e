@@ -1,0 +1,5 @@
+package com.usuarios.demo.service;
+
+public class UsuarioService {
+
+}
