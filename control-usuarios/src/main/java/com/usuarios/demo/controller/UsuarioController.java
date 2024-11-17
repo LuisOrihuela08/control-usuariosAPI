@@ -1,6 +1,7 @@
 package com.usuarios.demo.controller;
 
 import java.util.List;
+import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,6 +20,8 @@ import com.usuarios.demo.service.UsuarioService;
 @RequestMapping("/api/usuarios")
 public class UsuarioController {
 
+	private List<Usuario> usuarios = new ArrayList<>();
+	
 	@Autowired
 	private UsuarioService usuarioService;
 	
@@ -28,7 +31,7 @@ public class UsuarioController {
 									  usuarioDTO.getApellidos(),
 									  usuarioDTO.getCorreo(),
 									  usuarioDTO.getNumero_telefonico());
-		usuarioService.save(usuario);
+		usuarios.add(usuario);
 		
 		//Y aca enviamos el correo electronico del nuevo registro de usuario
 		String email = "erickmendozaojeda33@gmail.com";
@@ -85,7 +88,6 @@ public class UsuarioController {
 	
 	@GetMapping("/list")
 	public ResponseEntity<List<Usuario>> listUsuarios (){
-		List<Usuario> listUsuarios = usuarioService.listUsuarios();
-		return new ResponseEntity<>(listUsuarios, HttpStatus.OK);
+		return new ResponseEntity<>(usuarios, HttpStatus.OK);
 	}
 }
