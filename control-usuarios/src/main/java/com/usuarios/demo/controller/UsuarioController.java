@@ -11,12 +11,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.usuarios.demo.dto.UsuarioDTO;
 import com.usuarios.demo.entity.Usuario;
 import com.usuarios.demo.service.UsuarioService;
 
 @RestController
+@CrossOrigin(origins = "https://demo-pi-pied.vercel.app/", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE, RequestMethod.OPTIONS})
 @RequestMapping("/api/usuarios")
 public class UsuarioController {
 

@@ -28,23 +28,23 @@ spring:
 #        format_sql: true
 #    show-sql: true
     
-  web:
-    cors:
-      add-to-simple-url-handler-mapping: true
-      cors-configurations:
-        '[/**]': # Configuración global para todas las rutas
-          allowedOrigins:
-            - "http://localhost:4200"
-            - "https://demo-pi-pied.vercel.app/"
-          allowedMethods:
-            - GET
-            - POST
-            - PUT
-            - DELETE
-            - OPTIONS
-          allowedHeaders:
-            - "*"
-          allowCredentials: true
+#  web:
+#    cors:
+#      add-to-simple-url-handler-mapping: true
+#      cors-configurations:
+#        '[/**]': # Configuración global para todas las rutas
+#          allowedOrigins:
+#            - "http://localhost:4200"
+#            - "https://demo-pi-pied.vercel.app/"
+#          allowedMethods:
+#            - GET
+#            - POST
+#            - PUT
+#            - DELETE
+#            - OPTIONS
+#          allowedHeaders:
+#            - "*"
+#          allowCredentials: true
     
 springdoc:
   swagger-ui:
