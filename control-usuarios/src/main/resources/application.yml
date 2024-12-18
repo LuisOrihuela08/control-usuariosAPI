@@ -3,10 +3,10 @@ spring:
     name: control-usuarios
 
   mail:
-    host: smtp.gmail.com
-    port: 587
-    username: fablabproyecto@gmail.com
-    password: bvgo wzga uify zlgg
+    host: ${MAIL_HOST}
+    port: ${MAIL_PORT}
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PASSWORD}
     properties:
       mail:
         smtp:
@@ -14,38 +14,7 @@ spring:
           starttls:
             enable: true
    
-#  datasource:
-#    driver-class-name: com.mysql.cj.jdbc.Driver
-#    username: root
-#    password: 12345678
-#    url: jdbc:mysql://localhost:3306/control-usuarios?serverTimezone=UTC
-#  jpa:
-#    hibernate:
-#      ddl-auto: update
-#    properties:
-#      hibernate:
-#        dialect: org.hibernate.dialect.MySQL8Dialect
-#        format_sql: true
-#    show-sql: true
-    
-#  web:
-#    cors:
-#      add-to-simple-url-handler-mapping: true
-#      cors-configurations:
-#        '[/**]': # Configuración global para todas las rutas
-#          allowedOrigins:
-#            - "http://localhost:4200"
-#            - "https://demo-pi-pied.vercel.app/"
-#          allowedMethods:
-#            - GET
-#            - POST
-#            - PUT
-#            - DELETE
-#            - OPTIONS
-#          allowedHeaders:
-#            - "*"
-#          allowCredentials: true
-    
+   
 springdoc:
   swagger-ui:
     path: /custom-path/swagger-ui.html
