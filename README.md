@@ -43,6 +43,6 @@ Proyecto backend desarrollado en Java con Spring Boot que permite gestionar regi
    ```bash
    ./mvnw spring-boot:run
 
-👨‍💻 Autor
+## 👨‍💻 Autor
 Luis Orihuela Orozco
 Backend Developer - 2024
