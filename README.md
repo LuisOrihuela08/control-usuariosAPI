@@ -43,6 +43,10 @@ Proyecto backend desarrollado en Java con Spring Boot que permite gestionar regi
    ```bash
    ./mvnw spring-boot:run
 
+4. Frontend (Landing Page) de prueba para la API
+   ```bash
+   https://github.com/LuisOrihuela08/control-usuarios-frontend.git
+
 ## 👨‍💻 Autor
 Luis Orihuela Orozco | 
 Backend Developer - 2024
