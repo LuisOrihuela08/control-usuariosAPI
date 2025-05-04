@@ -18,8 +18,11 @@ import com.usuarios.demo.dto.UsuarioDTO;
 import com.usuarios.demo.entity.Usuario;
 import com.usuarios.demo.service.UsuarioService;
 
+import lombok.extern.slf4j.Slf4j;
+
 @RestController
-@CrossOrigin(origins = "https://demo-pi-pied.vercel.app/", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE, RequestMethod.OPTIONS})
+@Slf4j
+@CrossOrigin(origins = "http://localhost:4200", methods = {RequestMethod.POST, RequestMethod.OPTIONS})
 @RequestMapping("/api/usuarios")
 public class UsuarioController {
 
@@ -37,7 +40,7 @@ public class UsuarioController {
 		usuarios.add(usuario);
 		
 		//Y aca enviamos el correo electronico del nuevo registro de usuario
-		String email = "erickmendozaojeda33@gmail.com";
+		String email = "orihuelao.luis@gmail.com";
 		String subject = "Se registro un nuevo usuario";
 		
 		//Ahora implementamos la estructura HTML
@@ -83,10 +86,19 @@ public class UsuarioController {
 		
 		try {
 			usuarioService.sendHtmlEmail(email, subject, message);
+			
+			
 		} catch (Exception e) {
 			return new ResponseEntity<>("Error al enviar el correo electrónico" + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
-		}	
+		}
+		log.info("------------------------------------");
+		log.info("El usuario se registró correctamente");
+		log.info("Nombre: {}", usuarioDTO.getNombres());
+		log.info("Apellido: {}", usuarioDTO.getApellidos());
+		log.info("Correo: {}", usuarioDTO.getCorreo());
+		log.info("Número telefónico: {}", usuarioDTO.getNumero_telefonico());
 		return new ResponseEntity<>(usuario, HttpStatus.CREATED);
+		
 	}
 	
 	@GetMapping("/list")

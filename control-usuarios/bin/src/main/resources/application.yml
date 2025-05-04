@@ -1,17 +1,7 @@
 spring:
   application:
     name: control-usuarios
-  profiles:
-    active:
-    - dev 
 
----
-spring:
-  config:
-    activate:
-      on-profile: dev
-    import: optional:file:.env[.properties]
-    
   mail:
     host: ${MAIL_HOST}
     port: ${MAIL_PORT}
